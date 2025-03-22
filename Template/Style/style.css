@@ -1,0 +1,398 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #1a1a1d;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.main-container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Profile Header */
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #333;
+}
+
+.user-info h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.user-name {
+  color: #a29bfe;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: #6c5ce7;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #5449d1;
+}
+
+.logout-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Profile Container */
+.profile-container {
+  display: grid;
+  gap: 20px;
+}
+
+/* Audits Ratio */
+/* Level Info */
+#level-info, #audits-ratio {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #27272a;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.level-title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+}
+
+.level-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+.level-number {
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+}
+
+/* Projects Info */
+#projects-info {
+  background-color: #27272a;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  grid-column: span 2;
+}
+
+.projects-container h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+}
+
+.project-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background-color: #333;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  background-color: #444;
+  transform: translateX(5px);
+}
+
+.project-card h4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #e0e0e0;
+}
+
+.project-card span {
+  font-size: 14px;
+  color: #a29bfe;
+  font-weight: 600;
+}
+
+/* Skills Charts */
+#skills-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  grid-column: span 2;
+}
+
+#skills-technologies, #skills-technical {
+  background-color: #27272a;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 500px;
+  max-width: 550px;
+}
+
+.skills-container{
+  width: 410px;
+  position: relative;
+}
+
+.skills-title {
+  text-align: left;
+  font-size: 18px;
+  color: #e0e0e0;
+  position: absolute;
+  bottom: 20px;
+  padding: 20px;
+  left: 100px;
+  right: 0;
+  margin: 0 auto;
+}
+
+/* Transaction Info */
+#transaction-info {
+  background-color: #27272a;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  min-height: 450px;
+  height: 700px;
+  grid-column: span 2;
+}
+
+.transaction-title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.transaction-stat {
+  font-size: 36px;
+  font-weight: 700;
+  color: #a29bfe;
+  margin-bottom: 30px;
+}
+
+.transaction-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.transaction-project {
+  font-size: 14px;
+  color: #aaa;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 5px;
+}
+
+.transaction-project span {
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+/* Login Styles */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1a1a1d;
+  padding: 20px;
+}
+
+.login-card {
+  background-color: #27272a;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-card h1 {
+  text-align: center;
+  color: #e0e0e0;
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #e0e0e0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.login-card input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(162, 155, 254, 0.5);
+}
+
+.login-card input::placeholder {
+  color: #888;
+}
+
+.login-card .error {
+  color: #e74c3c;
+  font-size: 14px;
+  text-align: center;
+  min-height: 20px;
+}
+
+.login-card button {
+  margin-top: 10px;
+  background-color: #6c5ce7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  font-size: 16px;
+}
+
+.login-card button i {
+  font-size: 16px;
+}
+
+.login-card button:hover {
+  background-color: #5449d1;
+}
+
+/* No Script Styles */
+#no-script {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#no-script div {
+  text-align: center;
+  padding: 20px;
+}
+
+#no-script img {
+  max-width: 500px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+#no-script h1 {
+  color: #e74c3c;
+  margin-bottom: 10px;
+}
+
+#no-script p {
+  color: #aaa;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .transaction-projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    grid-template-columns: 1fr;
+  }
+  
+  #skills-technologies, #skills-technical, #transaction-info {
+    grid-column: span 1;
+  }
+  
+  #projects-info {
+    grid-column: span 1;
+  }
+  
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .logout-btn {
+    margin-top: 10px;
+  }
+  
+  .transaction-projects {
+    grid-template-columns: 1fr;
+  }
+  
+  #transaction-info {
+    padding: 20px;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 20px;
+  }
+  
+  .transaction-project {
+    padding: 8px;
+    font-size: 13px;
+  }
+  
+  .transaction-stat {
+    font-size: 28px;
+  }
+}
