@@ -25,8 +25,8 @@ function renderTransactionTemplate(projects) {
     const svg = document.getElementById("transaction-info");
     svg.innerHTML = "";
 
-    const width = Math.min(1500, svg.clientWidth);
-    const height = Math.min(2000, svg.clientHeight);
+    const width = svg.clientWidth - 100;
+    const height = svg.clientHeight - 50;
     const padding = 20;
     let lastXp = 0;
     let totalXp = 0;

@@ -193,8 +193,7 @@ body {
   padding: 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   width: 100%;
-  min-height: 450px;
-  height: 700px;
+  height: 500px;
   grid-column: span 2;
 }
 
@@ -357,6 +356,11 @@ body {
   
   #skills-technologies, #skills-technical, #transaction-info {
     grid-column: span 1;
+  }
+  
+  #transaction-info {
+    width: 50%;
+    height: auto;
   }
   
   #projects-info {
