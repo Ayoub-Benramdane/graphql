@@ -66,7 +66,7 @@ function renderTransactionTemplate(projects) {
     gridLine.setAttribute("y2", yPos);
     gridLine.setAttribute("stroke", "#ddd");
     gridLine.setAttribute("stroke-width", 1);
-    gridLine.setAttribute("stroke-dasharray", "4,4");
+    gridLine.setAttribute("stroke-dasharray", "8 8");
     svg.appendChild(gridLine);
 
     const yLabel = document.createElementNS(

@@ -4,7 +4,7 @@ import { renderAuditsInfo } from "./ratio.js";
 import { renderLevelInfo } from "./level.js";
 import { renderSkillsInfo } from "./skills.js";
 import { renderProjectsInfo } from "./projects.js";
-import { renderTransactionInfo } from "./tansaction.js";
+import { renderTransactionInfo } from "./transaction.js";
 
 export async function checkUserData() {
   const token = localStorage.getItem("JWT");
