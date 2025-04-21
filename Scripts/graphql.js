@@ -1,4 +1,4 @@
-export async function fetchGraphQL(query, variables, token) {
+export async function fetchGraphQL(query, token) {
     const response = await fetch(`https://learn.zone01oujda.ma/api/graphql-engine/v1/graphql`, {
         method: 'POST',
         headers: {
@@ -7,7 +7,6 @@ export async function fetchGraphQL(query, variables, token) {
         },
         body: JSON.stringify({
             query: query,
-            variables: variables,
         }),
     });
     return response.json();

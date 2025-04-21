@@ -4,7 +4,7 @@ import { skills_info } from "./queryql.js";
 export async function renderSkillsInfo() {
   const token = localStorage.getItem("JWT");
 
-  await fetchGraphQL(skills_info, {}, token)
+  await fetchGraphQL(skills_info, token)
     .then((response) => {
       if (Array.isArray(response.errors)) {
         throw response.errors[0].message;

@@ -3,7 +3,7 @@ import { ratio_info } from "./queryql.js";
 
 export async function renderAuditsInfo() {
     const token = localStorage.getItem("JWT");
-    await fetchGraphQL(ratio_info, {}, token)
+    await fetchGraphQL(ratio_info, token)
         .then((response) => {
             if (Array.isArray(response.errors)) {
                 throw response.errors[0].message;

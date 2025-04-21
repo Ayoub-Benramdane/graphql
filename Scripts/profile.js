@@ -2,15 +2,10 @@ import { fetchGraphQL } from "./graphql.js";
 import { handleLogout } from "./login.js";
 import { user_info } from "./queryql.js";
 import { checkUserData } from "./data.js";
-import { renderAuditsInfo } from "./ratio.js";
-import { renderLevelInfo } from "./level.js";
-import { renderSkillsInfo } from "./skills.js";
-import { renderProjectsInfo } from "./projects.js";
-import { renderTransactionInfo } from "./tansaction.js";
 
 export async function handleProfile() {
   const token = localStorage.getItem("JWT");
-  fetchGraphQL(user_info, {}, token)
+  fetchGraphQL(user_info, token)
     .then((response) => {
       if (Array.isArray(response.errors)) {
         throw response.errors[0].message;

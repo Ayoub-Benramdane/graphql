@@ -3,7 +3,7 @@ import { top_project } from "./queryql.js";
 
 export function renderProjectsInfo() {
     const token = localStorage.getItem("JWT");
-    fetchGraphQL(top_project, {}, token)
+    fetchGraphQL(top_project, token)
         .then((response) => {
             if (Array.isArray(response.errors)) {
                 throw response.errors[0].message;

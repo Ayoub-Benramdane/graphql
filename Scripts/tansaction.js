@@ -3,7 +3,7 @@ import { transaction_info } from "./queryql.js";
 
 export async function renderTransactionInfo() {
   const token = localStorage.getItem("JWT");
-  await fetchGraphQL(transaction_info, {}, token)
+  await fetchGraphQL(transaction_info, token)
     .then((response) => {
       if (Array.isArray(response.errors)) {
         throw response.errors[0].message;

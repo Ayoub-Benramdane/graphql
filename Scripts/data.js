@@ -8,7 +8,7 @@ import { renderTransactionInfo } from "./tansaction.js";
 
 export async function checkUserData() {
   const token = localStorage.getItem("JWT");
-  let Fetch = await fetchGraphQL(top_project, {}, token);
+  let Fetch = await fetchGraphQL(top_project, token);
 
   if (Fetch.data.user[0].transactions.length === 0) {
     renderNoData();
