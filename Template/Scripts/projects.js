@@ -19,6 +19,9 @@ export function renderProjectsInfo() {
 
 function renderProjectsTemplate(projects) {
     const container = document.getElementById("projects-info");
+    if (!container) {
+        return;
+    }
     container.innerHTML = `
     <div class="projects-container">
     <h2>Top projects</h2>

@@ -26,7 +26,7 @@ export function handleLogin() {
             localStorage.setItem('JWT', response)            
             handleProfile()
         } catch (error) {
-            writeErrorMessage("login-error", error)
+            console.error(error)
         }
     })
 }
@@ -45,13 +45,6 @@ function renderLoginPage() {
     </div>`
 
     document.body.appendChild(container);
-    
-    document.getElementById('username')?.addEventListener("focus", () => {
-        writeErrorMessage("login-error", "")
-    })
-    document.getElementById('password')?.addEventListener("focus", () => {
-        writeErrorMessage("login-error", "")
-    })
 }
 
 async function submitLogin(credentials) {

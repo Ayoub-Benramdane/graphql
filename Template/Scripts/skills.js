@@ -40,6 +40,9 @@ export async function renderSkillsInfo() {
         );
         const svgTechnologies = document.getElementById("skills-technologies");
         const svgTechnical = document.getElementById("skills-technical");
+        if (svgTechnologies == null || svgTechnical == null) {
+          return
+        }
         renderSkillsTemplate(maxAmountsTechnologies, svgTechnologies);
         renderSkillsTemplate(maxAmountsTechnical, svgTechnical);
       } else {

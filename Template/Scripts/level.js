@@ -10,6 +10,9 @@ export async function renderLevelInfo() {
       }
 
       if (response && Array.isArray(response.data.transaction)) {
+        if (response.data.transaction.length === 0) {
+          throw new Error("No transaction found!");
+        }
         const level = response.data.transaction[0].amount;
         renderLevelTemplate(level);
       } else {
@@ -18,7 +21,6 @@ export async function renderLevelInfo() {
     })
     .catch((error) => {
       if (typeof error === "string" && error.includes("JWTExpired"))
-        handleLogout();
       console.error(error);
     });
 }

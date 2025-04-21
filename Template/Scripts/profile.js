@@ -1,6 +1,7 @@
 import { fetchGraphQL } from "./graphql.js";
 import { handleLogout } from "./login.js";
 import { user_info } from "./queryql.js";
+import { checkUserData } from "./data.js";
 import { renderAuditsInfo } from "./ratio.js";
 import { renderLevelInfo } from "./level.js";
 import { renderSkillsInfo } from "./skills.js";
@@ -8,32 +9,31 @@ import { renderProjectsInfo } from "./projects.js";
 import { renderTransactionInfo } from "./tansaction.js";
 
 export async function handleProfile() {
-    const token = localStorage.getItem("JWT");
-    fetchGraphQL(user_info, {}, token)
-        .then((response) => {
-            if (Array.isArray(response.errors)) {
-                throw response.errors[0].message;
-            }
-            const user = response?.data.user;
-            
-            if (response && Array.isArray(user)) {
-                renderProfilePage(user[0]);
-            } else {
-                throw new Error("Invalid data received!");
-            }
-        })
-        .catch((error) => {
-            if (typeof error === "string" && error.includes("JWTExpired"))
-                handleLogout();
-            console.error(error);
-        });
+  const token = localStorage.getItem("JWT");
+  fetchGraphQL(user_info, {}, token)
+    .then((response) => {
+      if (Array.isArray(response.errors)) {
+        throw response.errors[0].message;
+      }
+      const user = response?.data.user;
+
+      if (response && Array.isArray(user)) {
+        renderProfilePage(user[0]);
+      } else {
+        throw new Error("Invalid data received!");
+      }
+    })
+    .catch((error) => {
+      if (typeof error === "string" && error.includes("JWTExpired"))
+        handleLogout();
+    });
 }
 
 function renderProfilePage(user) {
-    document.body.innerHTML = ``;
-    const container = document.createElement('div');
-    container.className = "main-container";
-    container.innerHTML = `
+  document.body.innerHTML = ``;
+  const container = document.createElement("div");
+  container.className = "main-container";
+  container.innerHTML = `
     <div class="profile">
         <div class="profile-header">
             <div class="user-info">
@@ -61,11 +61,9 @@ function renderProfilePage(user) {
         </div>
     </div>`;
 
-    document.body.appendChild(container);
-    document.getElementById('logout-button')?.addEventListener('click', handleLogout);
-    renderAuditsInfo();
-    renderLevelInfo();
-    renderProjectsInfo();
-    renderSkillsInfo();
-    renderTransactionInfo();
-};
+  document.body.appendChild(container);
+  document
+    .getElementById("logout-button")
+    ?.addEventListener("click", handleLogout);
+  checkUserData();
+}

@@ -23,6 +23,20 @@ export async function renderAuditsInfo() {
 
 function renderAuditsTemplate(data) {
     const container = document.getElementById("audits-ratio");
+    if (!container) {
+        return;
+    }
+    if (data.auditRatio === null) {
+        container.innerHTML = `
+        <div class="audits-container">
+            <h2 class="level-title">Your Audit Ratio</h2>
+            <div class="level-card">
+                <span class="level-number">0</span>
+            </div>
+        </div>
+    `;
+        return;
+    }
     container.innerHTML = `
     <div class="audits-container">
         <h2 class="level-title">Your Audit Ratio</h2>
